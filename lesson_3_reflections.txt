@@ -1,0 +1,4 @@
+1. When would you want to use a remote repository rather than keeping all your work local?
+
+We use remote repository when we are working from different workstations, but on the same projectand also when we are 
+collaborating with others, so that we can obtain what changes they made.
