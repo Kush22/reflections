@@ -2,3 +2,7 @@
 
 We use remote repository when we are working from different workstations, but on the same projectand also when we are 
 collaborating with others, so that we can obtain what changes they made.
+
+2. Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+
+Because we might not always want to incorporate the change made by any collaborator to our local code. So, its good to have the control when we want to pull.
