@@ -6,3 +6,9 @@ collaborating with others, so that we can obtain what changes they made.
 2. Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
 
 Because we might not always want to incorporate the change made by any collaborator to our local code. So, its good to have the control when we want to pull.
+
+3. Describe the differences between forks, clones, and branches. When would you use one instead of another?
+
+Fork is used to clone a github repo on github itself, without needed it to be downloaded to the local system first. It also keeps info. of the author of the orinal repo for credits.
+Cloning is to save a github repository to our local system, so that we can fiddle with thr code without breaking the code on repository.
+A branch is used to test an experimental feature. All the previous commits earlier to when the branch was created are accessible from the new branch that is created.
