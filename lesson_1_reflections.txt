@@ -1,15 +1,12 @@
 1. How did viewing a diff between two versions of a file help you see the bug that was introduced?
 
-The diff showed the difference that was added using
-+ and - signs and hence it was easy to see which lines
+The diff showed the difference that was added using + and - signs and hence it was easy to see which lines
 are added to find the bud.
 
 2. How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
 
-If we have access to the older versions of the file that we
-wrote, we can learn from the mistakes, improve our style of 
-writing and also see the entire timeline how the file was 
-created.
+If we have access to the older versions of the file that we wrote, we can learn from the mistakes, improve our style of 
+writing and also see the entire timeline how the project evolved over time.
 
 3. What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
 
