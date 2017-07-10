@@ -12,3 +12,15 @@ Because we might not always want to incorporate the change made by any collabora
 Fork is used to clone a github repo on github itself, without needed it to be downloaded to the local system first. It also keeps info. of the author of the orinal repo for credits.
 Cloning is to save a github repository to our local system, so that we can fiddle with thr code without breaking the code on repository.
 A branch is used to test an experimental feature. All the previous commits earlier to when the branch was created are accessible from the new branch that is created.
+
+4. What is the benefit of having a copy of the last known state of the remote stored locally?
+
+It updates only the commits that are newly added, so all the commits and info need not be sent. It also helps in keeping track of what our progress is wrt our remote branch.
+
+5. How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+
+By mailing the changed files or using file sharing services like dropbox, but it will be harder, beacuase all the facilities that git and github provides we will have to simulate that on our own.
+
+6. When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
+
+When we are working on a new feature and we are also collaborating with others, in that case it's better to first commit on the separate branch so that others can also review the change before merging it to the master. This provides the benefit that the master branch always contains the working code.
