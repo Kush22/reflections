@@ -1,0 +1,96 @@
+To compare two files for differences use: diff
+-> diff -u old-file new-file
+	The removed things are shown with a '-' sign and the added ones with '+' sign
+
+
+TIP :- Make a commit for a logical change. This way the history will be logical and can be understood easily with the help of discriptive messages
+
+
+
+> git config --global color.ui auto -> this makes the differences between the files shown in different colors, instead of default white font.
+
+> git log -> this gives the log of every commit made along with an ID, and the message that is added while commiting
+> git log --stat -> shows some stats alongside the names of the files that were changed
+
+> git diff [commit-id1] [commit-id2] -> Like diff, it shows the alterations that are made between the two commits	
+
+> git clone [link-to-repository] -> This copies the entire repo along with the entire history of commit logs.
+(Whenever we clone a repository to our local machine, a remote origin is automatically created which is the repo that we cloned)
+
+> git config --global credential.helper cache -> To cache the password for github so we need not enter everytime.
+> git config --global credential.helper 'cache --timeout=3600' -> To change the default cache timeout (default is 15 min)
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Staging Area: It is an intermediate place between the directory on the hard-disk and the git repository. We can add files to staging area using 'git add [file-name]'. When we commit, all the files in the staging area are bundled as a single commit. So logically related things needs to be added together.
+
+Reachability: while making a commit make sure that it is reachable from any of the current branches (else we might lose that once we switch to a different branch) - see fig. in the folder for more details.
+
+Every commit has a parent commit associated to it, which helps in giving the output of 'git log'
+
+TIP :- If you accidentally add a file to the staging area, you can remove it using 'git reset [file-name]'
+	   How to write commit messages : http://udacity.github.io/git-styleguide/
+
+> git diff -> this command run without any arguments shows the changes between the files from the staging area and the working directory. So, if we made some changes to a file and went away and after returning we want to see what changes were made use this command.
+
+> git diff --staged -> to compare the files between the commit area and the staging area, so as to see before commiting the 					   actual changes that we would be making.
+
+> git reset --hard -> [WARNING] to reset all the changes made in the working directory and the staging area. Use this with 	
+					  caution after runnin 'git diff' & 'git diff --staged' to see what changes would be made.
+
+> git init -> Initialising a directory to become a git repository
+
+> git add [file-name(s)] -> Adds the corresponding file(s) to the staging area.
+
+> git reset [file-name] -> This removes the files that are accidentally added to the staging area.
+
+> git status -> Shows the status of the repository, which files are changed since last commit and which are untracked, etc
+
+Branch :- A branch can be made to try out new experimental feature and later when finalised can be merged together.
+		  The latest commmit to the branch is called Tip of the branch.
+
+> git branch -> Shows the branches that are present on the repository ('*' shows the currently checked out branch)
+
+> git branch [branch-name] -> Creates a new branch with the new provided branch name
+
+> git checkout [branch-name] -> To switch to the branch with the provided name
+
+TIP :- The 'git branch [new-branch]' & 'git checkout [new-branch]' can be combined and run together using the coming 
+	   'git checkout -b [new-branch]'
+
+> git branch -d [branch-name] -> for deleting a branch, that has been merged so we dont need a separate one. This just
+								 deletes the label for that branch.
+
+
+TIP :- Whenever we wan to merge two branches, checkout the branch in which we want to include all the changes of the other (and then run the merge command)
+
+> git merge [branch-1] [branch-2] -> used for automatically merging two branches with the provided names
+
+Merge Conflict :- In case of merge conflict, the coder has to resolve the merge error. For this open the file on which the 	
+				  merge error occured and the merge conflicts are shown with '<<<<' & '||||' symbols (which divides the screen in 3 sections). The top section is the code of the current branch, the bottom is of one with which we are merging and the middle is the common ancestor that both the branches changed.
+				  (After resolving the conflict, add the file to staging area and then commit)
+
+----------------------------------------------------------------------------------------------------------------------------
+GITHUB
+
+Remote :- For a local copy of the repository, the repo which stay on github is called a remote. 
+
+> git remote -> To check the remotes that are present
+
+> git remote -v -> 'v' stands for verbsoe. It gives some details about the remotes and we can check wheter we added the correct url.
+
+> git remote add [remote-name] [url-for-remote] -> The remote-name can be any name and that will be used in the local repo to refer to the repo on Github (if only one remote: standard is to name is 'origin')\
+
+> git push [remote-name] [local-branch-name] -> The name of the branch at the remote will be the same as that of the local branch name & all the commits that are reachable from the local branch will be pushed to the remote.	
+
+> git pull [remote-name] [remote-branch-name] -> This pulls all the changes (if any) from Github repo to the local repository.
+
+FORKING :- This allows us to make a copy of someone else's repository on Github directly on github servers, instead of first cloning it down to our local machine. (Its like cloning on the github server's. Just that some information is kept about the forked repo like fork count etc.)
+
+Whenever we clone/push/pull a change to github repo, locally a pointer is updated as origin/master (or whaterver the name of remote/branch) so that we can see are we ahead in our local commit than in the remote.
+If a new change is made in the remote, we can get all the changes using 'git fetch' command which creates a new branch of all the new changes from the node that was pointing to 'origin/master' and later we can merge (using git merge master origin/master) whenever we want to merge.
+
+> git fetch 'remote-name' (example: git fetch origin) :- To sync all the changes that are made in the remote to the local system.
+
+
+
