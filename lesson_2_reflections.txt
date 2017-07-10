@@ -26,7 +26,7 @@ The result of merging is that the two files are combined together. The changes i
 
 Pros:
 	1. The automatic merging saves time since we need not bother looking into the intricasies of the code to be merged.
-	2. The automatic merging when possible always produces a correct merged file, which can sometime breakdown in case of automatic merging.
+	2. The automatic merging when possible always produces a correct merged file, which can sometime breakdown in case of manual merging.
 Cons:
 	1. Automatic merging is not always possible, so manual merging is the last resort in case of merge conflicts.
 	2. Automatic merging cannot handle all the cases of merging.
